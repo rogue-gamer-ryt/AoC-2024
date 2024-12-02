@@ -2,6 +2,8 @@ input = open("input", "r")
 levels = []
 for line in input:
     levels.append(line.strip().split(" "))
+
+# Part 1
 res = 0
 for lev in levels:
     increasing, decreasing, valid = False, False, True
@@ -23,6 +25,7 @@ for lev in levels:
 print(res)
 
 
+# Part 2
 def check(lev):
     count = 0
 
@@ -49,14 +52,11 @@ def check(lev):
 res = 0
 
 for lev in levels:
-    valid = False
     if check(lev):
-        valid = True
+        res += 1
     else:
         for i in range(len(lev)):
             if check(lev[:i] + lev[i + 1:]):
-                valid = True
+                res += 1
                 break
-    if valid == 1:
-        res += 1
 print(res)
