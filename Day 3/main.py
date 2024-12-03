@@ -24,7 +24,7 @@ for match in itr:
         dont = True
     elif "do()" in command:
         dont = False
-    elif dont:
+    if dont:
         continue
     else:
         a, b = (eval(match.group()[3:]))
