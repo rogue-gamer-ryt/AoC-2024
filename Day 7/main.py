@@ -35,9 +35,10 @@ for line in input:
             seen.add(tuple(nums))
             break
     for operators in all_operators_2:
-        if tuple(nums) not in seen:
-            if _eval(nums, operators) == out:
-                res2 += out
-                break
+        if tuple(nums) in seen:
+            break
+        if _eval(nums, operators) == out:
+            res2 += out
+            break
 print(f"Result1 = {res1}")
 print(f"Result2 = {res1 + res2}")
