@@ -65,7 +65,7 @@ for line in input:
 
 def display():
     for row in board:
-        print("".join(map(str, row)).replace("0", ".").replace("1", "*"))
+        print("".join(map(str, row)).replace("0", " ").replace("1", "*"))
 
 def solve(part1):
     s = 1
